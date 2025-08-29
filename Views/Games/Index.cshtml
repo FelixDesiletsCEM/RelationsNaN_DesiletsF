@@ -24,6 +24,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Genre)
             </th>
+            <th>    
+                @Html.DisplayNameFor(model => model.Platforms)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -50,6 +53,12 @@
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
             </td>
+                <td>
+                    @foreach (var platform in item.Platforms)
+                    {
+                        <span class="badge bg-primary">@platform.Name</span>
+                    }
+                </td>
         </tr>
 }
     </tbody>
